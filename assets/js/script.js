@@ -1,28 +1,15 @@
-/* Color-code each time block based on past, present, and future when the time block is viewed.
-
-Allow a user to enter an event when they click a time block
+/* Allow a user to enter an event when they click a time block
 
 Save the event in local storage when the save button is clicked in that time block.
 
 Persist events between refreshes of a page */
 
+const currentHour = dayjs().hour();
+console.log(currentHour);
+
 // display the current day at the top of the calendar when a user opens the planner
 const today = dayjs();
 $("#currentDay").text(today.format("dddd D MMM YYYY"));
-
-// colour code when clicked (event listener):
-/* past
-present
-future
-
-onload
-
-check against current date/time
-if less = past
-if equal = present
-if more = future
-
-get current date time */
 
 // when the page is ready
 document.addEventListener('DOMContentLoaded', function () {
@@ -30,13 +17,20 @@ document.addEventListener('DOMContentLoaded', function () {
     // select all hour blocks
     const hourBlocks = document.querySelectorAll('.hour');
 
-    // loop all hour blocks and check against current time
+    // loop hour blocks to check them against the current hour
     hourBlocks.forEach(function(hourBlock) {
-        // get the hour block value
+        // get the hour block value and parse as an int
         let hourBlockValue = hourBlock.innerHTML;
+        let hourBlockNumber = parseInt(hourBlockValue, 10);
 
-        // compare hour block value against current time
-        // TODO 
+        // compare hour block value against current time and colour the corresponding divs accordingly
+        if (hourBlockNumber === currentHour) {
+            hourBlock.style.backgroundColor = "red";
+        } else if (hourBlockNumber < currentHour) {
+            hourBlock.style.backgroundColor = "grey";
+        } else {
+            hourBlock.style.backgroundColor = "green";
+        };
     });
 
 });
