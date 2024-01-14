@@ -38,7 +38,7 @@ header {
 
 .description {
   flex-grow: 1;
-  width: 80%;
+  width: 70%;
   border-top: 1px dashed #000;
   border-left: 1px dashed #000;
   white-space: pre-wrap;
@@ -69,6 +69,7 @@ header {
 }
 
 .saveBtn {
+  width: 10%;
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
