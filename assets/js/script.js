@@ -39,9 +39,25 @@ document.addEventListener('DOMContentLoaded', function () {
         // if at least one local storage item exists then proceed
             // loop divs and match where rowId === id (div)
             // populate the associated description
+
+        // loop local storage items (by length)
         for (let i = 0; i < length; i++){
-            //
-        }
+            // retrieve the current item key
+            const key = localStorage.key(i);
+
+            // check for keys that include 'description'
+            if (key.includes("_description")) {
+                const rowId = key.split("_")[0];
+                const currentDiv = document.getElementById(rowId);
+
+                // if description key is found then get the description value, match it with the corresponding (div) rowId and populate it
+                if (currentDiv) {
+                    const descriptionValue = localStorage.getItem(key);
+
+                    currentDiv.querySelector('.description').innerText = descriptionValue;
+                }
+            }
+        };
     };
 
     loadDivValues();
