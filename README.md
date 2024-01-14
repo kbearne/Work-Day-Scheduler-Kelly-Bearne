@@ -19,7 +19,7 @@ This application runs in the browser and allows a user to save items in a Work D
 
 The application displays the current date at the top of the calendar via day.js library. 
 
-It presents timeblocks for standard business hours which are colour coded into past, present and future values (the backgrounds colours are dynamically with JavaScript / CSS).
+It presents timeblocks for standard business hours which are colour coded into past, present and future values (the backgrounds colours are dynamically updated via JavaScript / CSS).
 
 Users can click on a timeblock and enter an event. They can then click on a save button to save the entry (which persists on browser refresh). If a blank value entry is attempted, the user is promoted to enter a value.
 
