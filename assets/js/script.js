@@ -43,12 +43,12 @@ document.addEventListener('DOMContentLoaded', function () {
             // check that the description value isn't blank
             if (description.trim() !== "") {
                 // write the values for the associated hour and entered description to local storage
-                localStorage.setItem('hour', hour);
-                localStorage.setItem('description', description);
+                let rowId = currentRow.id;
+                localStorage.setItem(`${rowId}_hour`, hour);
+                localStorage.setItem(`${rowId}_description`, description);
             } else {
                 alert("Pleaase enter a value to save");
             };
-
         });
     });
 
