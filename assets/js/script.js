@@ -1,7 +1,3 @@
-/* Save the event in local storage when the save button is clicked in that time block.
-
-Persist events between refreshes of a page */
-
 // when the page is ready
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -31,6 +27,25 @@ document.addEventListener('DOMContentLoaded', function () {
         };
     });
 
+    // DESCRIPTION
+    function loadDivValues() {
+        let length = localStorage.length;
+
+        // check there is at least one local storage value stored, if there isn't then break
+        if (length === 0) {
+            return;
+        };
+
+        // if at least one local storage item exists then proceed
+            // loop divs and match where rowId === id (div)
+            // populate the associated description
+        for (let i = 0; i < length; i++){
+            //
+        }
+    };
+
+    loadDivValues();
+
     // allow a user to enter an event when they click a block and save it into local storage if they click 'save'
     // iterate over all buttons and listen for a click
     saveBtns.forEach(saveBtn => {
@@ -42,14 +57,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // check that the description value isn't blank
             if (description.trim() !== "") {
-                // write the values for the associated hour and entered description to local storage
+                // write the values for the associated hour and entered description to local storage, prefixed with the unique row Ids
                 let rowId = currentRow.id;
                 localStorage.setItem(`${rowId}_hour`, hour);
                 localStorage.setItem(`${rowId}_description`, description);
             } else {
-                alert("Pleaase enter a value to save");
+                // if the user enters a blank value, prompt them to enter a value
+                alert("Please enter a value to save");
             };
         });
     });
-
 });
