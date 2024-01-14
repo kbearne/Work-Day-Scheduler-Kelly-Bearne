@@ -22,13 +22,15 @@ header {
   padding: 60px;
 }
 
+/* width amended to 90%, aligned to center */
 .time-block {
   width: 90%;
   text-align: center;
   border-radius: 15px;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
+/* flex applied to rows */
 .row {
   display: flex;
   height: 80px;
@@ -36,6 +38,7 @@ header {
   border-top: 1px solid white;
 }
 
+/* width amended to 70% */
 .description {
   flex-grow: 1;
   width: 70%;
@@ -45,6 +48,7 @@ header {
   padding: 10px;
 }
 
+/* width amended to 20% */
 .hour {
   width: 20%;
   background-color: #ffffff;
@@ -68,6 +72,7 @@ header {
   color: white;
 }
 
+/* width amended to 10% */
 .saveBtn {
   width: 10%;
   border-left: 1px solid black;
